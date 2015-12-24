@@ -24,5 +24,5 @@ then
   curl -X POST "${MAKER_URL}"
   echo ""
 else
-  echo "Ignoring input! No action defined for mac address $1"
+  echo "Ignoring input! No action defined for MAC address $1"
 fi
