@@ -1,5 +1,9 @@
 #!/bin/sh
 
+### Child script for triggering an IFTTT action from an Amazon Dash button press.
+### Expects the mac address of the button as the first and only argument. Looks up
+### the MAC id in a map file using AWK and invokes the event via CURL.
+
 # Use your own IFTTT key, not this fake one
 IFTTT_KEY=9cn3847ntc8394tn8-ab
 # Mapping file from Dash MAC address key to Maker event name values

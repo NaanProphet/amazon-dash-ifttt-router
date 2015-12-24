@@ -25,6 +25,7 @@
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 REGEX="DHCPDISCOVER.* (..:..:..:..:..:..)"                                                  
 LOGFILE="/tmp/syslog.log"
+# relative location to the child script
 DASH_TRIGGER=dash-trigger.sh
 
 tail -f -n0 ${LOGFILE}  | while read LOGLINE
