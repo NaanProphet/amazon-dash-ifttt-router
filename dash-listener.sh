@@ -25,10 +25,13 @@
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 REGEX="DHCPDISCOVER.* (..:..:..:..:..:..)"                                                  
 LOGFILE="/tmp/syslog.log"
-# relative location to the child script
 DASH_TRIGGER=dash-trigger.sh
 
-tail -f -n0 ${LOGFILE}  | while read LOGLINE
+echo `date` > $LOGFILE
+
+# tail using filename, not inode since log is rotated. otherwise, script will receive no input after ~ 1 day
+# special thanks to: http://unix.stackexchange.com/questions/22698/how-to-do-a-tail-f-of-log-rotated-files
+tail -F -n0 ${LOGFILE}  | while read LOGLINE
 
 do
 
@@ -42,3 +45,4 @@ do
   fi
 
 done
+
